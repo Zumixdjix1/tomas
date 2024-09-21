@@ -44,7 +44,9 @@
 }
 
 html {
-    scroll-behavior:smooth;
+    /*scroll-behavior:smooth;*/
+    scroll-snap-type:y mandatory ;
+   
 }
 
 body {
@@ -53,8 +55,11 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    
 
 }
+
+
 
 ul{
     list-style: none;
@@ -72,6 +77,11 @@ img{
 /*======== REUSABLE CSS CLASSES ==========*/
 .section{
     padding: 4.5rem 0 2rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    
+    
+    
 }
 
 .section__title{
@@ -79,32 +89,50 @@ img{
     color: var(--title-color);
     text-align: center;
     margin-bottom: 1.5rem;
+  
+    
 
 }
 
 .section__height{
     height: 100vh;
+
 }
 
 
 /*======== LOYOUT ==========*/
 .container{
-    max-width: 968px;
+    max-width: 9968px;
     margin-left: 1rem;
     margin-right: 1rem;
+    overflow-y: scroll;
+    padding: auto;
+    
+    
+    
+    
     
 }
 
+.elementosscroll{
+    
+    width: 100%;
+    min-height: 100vh;
+   
+    
+
+
+}
 
 /*======== HEADER==========*/
 .header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--container-color);
-    z-index: var(--z-fixed);
-    transition: .4s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: .4s;
 }
 
 /*======== nav ==========*/
@@ -219,3 +247,111 @@ img{
   
 }
 
+
+.hero {
+    text-align: center;
+    padding: 10px 2px;
+    background: url('hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+
+
+.produtos, .produtos-lista {
+    padding: 20px;
+    text-align: center;
+}
+
+.produtos h2, .produtos-lista h2 {
+    margin-bottom: 20px;
+}
+
+.produto {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 250px;
+    text-align: center;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+}
+
+.produto h3 {
+    margin: 10px 0;
+}
+
+.produto p {
+    font-size: 14px;
+    color: #777;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #555;
+}
+
+.chat-suporte {
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-box {
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.chat-box .mensagens {
+    height: 200px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.chat-box input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-box button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-box button:hover {
+    background-color: #555;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
