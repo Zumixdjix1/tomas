@@ -79,7 +79,7 @@ img{
 .section{
     padding: 4.5rem 0 2rem;
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
     
     
     
