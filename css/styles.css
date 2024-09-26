@@ -45,8 +45,8 @@
 }
 
 html {
-    /*scroll-behavior:smooth;*/
-    scroll-snap-type:y mandatory ;
+    scroll-behavior:smooth;
+    
    
 }
 
@@ -78,8 +78,7 @@ img{
 /*======== REUSABLE CSS CLASSES ==========*/
 .section{
     padding: 4.5rem 0 2rem;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    
     
     
     
@@ -134,8 +133,42 @@ img{
   background-color: var(--container-color);
   z-index: var(--z-fixed);
   transition: .4s;
+  
+  }
+
+  
+  .searchBox {
+    position: absolute;
+    right: -100%; /* Fora da tela */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #777777ab;
+    align-items: center;
+    padding: 30px;
+    transition: right 0.5s ease-in-out, opacity 0.5s, visibility 0.5s;
+    visibility: hidden; /* Escondido por padrão */
+    opacity: 0; /* Invisível */
 }
 
+.searchBox.active {
+    right: 0%; /* Dentro da tela */
+    visibility: visible; /* Visível */
+    opacity: 1; /* Opaco */
+}
+
+.closeBtn {
+    opacity: 0;
+    visibility: hidden; /* Escondido */
+    transform: scale(0); /* Minimizado */
+    transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+}
+
+.closeBtn.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1); /* Mostrar e expandir */
+}
 /*======== nav ==========*/
 .nav{
     height: var(--header-height);
