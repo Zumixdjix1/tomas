@@ -10,10 +10,10 @@
 
     --first-color: hsl(var(--hue), var(--sat), 40%);
     --first-color-alt: hsl(var(--hue), var(--sat), 36%);
-    --title-color: hsl(var(--hue), 12%, 15%);
+    --title-color: #ffff;
     --text-color: hsl(var(--hue), 8%, 35%);
-    --body-color: hsl(var(--hue), 100%, 99%);
-    --container-color: #FFF;
+    --body-color:#ffffff;
+    --container-color: #000000;
 
     --body-font: 'Open Sans', sans-serif;
 
@@ -68,6 +68,7 @@ ul{
 
 a{
     text-decoration: none;
+    
 }
 
 img{
@@ -136,20 +137,48 @@ img{
   
   }
 
+  .searchBox input{
+    width: 100%;
+    height: 50%;
+    border-radius: 30px;
+    border: solid;
+    border-color: #ffffff;
+    outline: none;
+    height: 40px;
+    color: #ffff;
+    background-color: transparent;
+    
+    
+    
+
+  }
+
+  .searchBtn {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 1000;
+  }
+
   
   .searchBox {
+    
+    top: 6px;
     position: absolute;
-    right: -100%; /* Fora da tela */
-    width: 100%;
-    height: 100%;
+    left: -1%;/* Fora da tela */
+    width: 94%;
+    height: 80%;
     display: flex;
-    background-color: #777777ab;
+    background-color: rgb(0, 0, 0);
     align-items: center;
-    padding: 30px;
-    transition: right 0.5s ease-in-out, opacity 0.5s, visibility 0.5s;
+    padding: 20px;
+    transition: left 0.5s ease-in-out, opacity 0.5s, visibility 0.5s;
     visibility: hidden; /* Escondido por padrão */
     opacity: 0; /* Invisível */
+    
+   
+    
 }
+
 
 .searchBox.active {
     right: 0%; /* Dentro da tela */
@@ -158,17 +187,44 @@ img{
 }
 
 .closeBtn {
+    color: #ffffff;
     opacity: 0;
     visibility: hidden; /* Escondido */
     transform: scale(0); /* Minimizado */
     transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+    
 }
 
 .closeBtn.active {
     opacity: 1;
     visibility: visible;
     transform: scale(1); /* Mostrar e expandir */
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 1000;
+    
+    
+    
+    
 }
+
+.searchBtn.active{
+    opacity: 0;
+    visibility: hidden; /* Escondido */
+    transform: scale(0); /* Minimizado */
+    transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+    
+}
+
+.searchIP {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    align-self: center;
+    border: none;
+}
+
 /*======== nav ==========*/
 .nav{
     height: var(--header-height);
@@ -333,7 +389,7 @@ img{
 .active-link{
     position: relative;
     /*color: var(--first-color);*/
-    color: rgb(170, 84, 213);
+    color: rgb(230, 188, 251);
     transition: .3s;
 }
 

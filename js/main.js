@@ -41,6 +41,7 @@ function initSearchBar() {
     let searchBtn = document.querySelector('.searchBtn');
     let closeBtn = document.querySelector('.closeBtn');
     let searchBox = document.querySelector('.searchBox');
+   
 
     // Começar com a barra de pesquisa escondida
     searchBox.classList.remove('active');
