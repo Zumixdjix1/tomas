@@ -1,0 +1,277 @@
+<div class="container">
+    <div class="card">
+        <div class="card-feader">
+            register form
+        </div>
+
+        <div class="card-body">
+     <form action="/auth/register" method="POST">
+        <div class="form-group">
+            <label for="name">Nome </label> 
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email </label> 
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password </label> 
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="passwordConfirm">Confirme Password </label> 
+            <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register User</button>
+    </form>
+        </div>
+    </div>
+    {{#if message}}
+`           <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+</div>
+
+
+   <!--========== header =============-->
+   <header class="header" id="header">
+    <nav class="nav container">
+        <a href="" class="nav__logo"> ERMERODRI</a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link active-link">
+                        <i class='bx bx-home-heart nav__icon'></i>
+                        <span class="nav__name">Home</span>
+                    </a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="loja.html" class="nav__link">
+                        <i class='bx bx-store nav__icon'></i>
+                        <span class="nav__name">Loja</span>
+                    </a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="internacional.html" class="nav__link">
+                         
+                        <i class='bx bx-world nav__icon'></i>
+                        <span class="nav__name">internacional</span>
+                    </a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="chat.html" class="nav__link">
+                        <i class='bx bx-conversation nav__icon'></i>
+                        <span class="nav__name">Chat</span>
+                    </a>
+                </li>
+
+                <li class="nav__item">
+                    <a href="perfil.html" class="nav__link">
+                        <i class='bx bx-user nav__icon'></i>
+                        <span class="nav__name">Perfil</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div style="texte-: aliceblue;">
+            <ul>
+                <li><a href="login.hbs"> <p>Login</p></a></li>
+                <li><a href="register.hbs"> <p>Register</p></a></li>
+            </ul>
+        </div>
+        
+        <div class="search">
+            <span class="icon">
+                <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+            </span>
+            <div class="searchBox">
+                <input type="text" placeholder="O que você procura?">
+                
+            </div>
+        </div>
+
+
+        
+    </nav>
+</header>
+
+<body>
+<h2>Perfil do Usuário</h2>
+<p>Número de telefone: <span id="phone_number"></span></p>
+<p>Data de registro: <span id="created_at"></span></p>
+<button onclick="logout()">Logout</button>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--========== boxicons=============-->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <!--========== css =============-->
+    <link rel="stylesheet" href="/styles.css">
+    <title>login</title>
+</head>
+<body>
+    
+    <!--========== header =============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="" class="nav__logo"> ERMERODRI</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active-link">
+                            <i class='bx bx-home-heart nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="loja.html" class="nav__link">
+                            <i class='bx bx-store nav__icon'></i>
+                            <span class="nav__name">Loja</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="internacional.html" class="nav__link">
+                             
+                            <i class='bx bx-world nav__icon'></i>
+                            <span class="nav__name">internacional</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="chat.html" class="nav__link">
+                            <i class='bx bx-conversation nav__icon'></i>
+                            <span class="nav__name">Chat</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="perfil.html" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Perfil</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div style="texte-: aliceblue;">
+                <ul>
+                    <li><a href="login.hbs"> <p>Login</p></a></li>
+                    <li><a href="register.hbs"> <p>Register</p></a></li>
+                </ul>
+            </div>
+            
+            <div class="search">
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                </span>
+                <div class="searchBox">
+                    <input type="text" placeholder="O que você procura?">
+                    
+                </div>
+            </div>
+
+
+            
+        </nav>
+    </header>
+
+    <h2>Login com número de telefone</h2>
+    <div id="recaptcha-container"></div>
+    <input type="text" id="phoneNumber" placeholder="Número de telefone">
+    <button onclick="sendCode()">Enviar código</button>
+
+    <p>dcghfcgbnvchgvhgvhgj</p>
+
+    <div id="verify-code" style="display:none;">
+        <input type="text" id="verificationCode" placeholder="Código de verificação">
+        <P>VERI</P>
+        <button onclick="verifyCode()">A Verificar código</button>
+    </div>
+
+
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7kwRCZnZ4ScbztOX29fI2kRJX-8oVa2k",
+            authDomain: "tomas-ebfce.firebaseapp.com",
+            projectId: "tomas-ebfce",
+            storageBucket: "tomas-ebfce.appspot.com",
+            messagingSenderId: "385500274636",
+            appId: "1:385500274636:web:6690ef017b2985ff548769"
+        };
+    
+        // Inicialização do Firebase e Autenticação
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        auth.useDeviceLanguage();
+    
+        // Função para enviar o código SMS
+        window.sendCode = function() {
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const appVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
+
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+        .then((confirmationResult) => {
+            window.confirmationResult = confirmationResult;
+            document.getElementById('verify-code').style.display = 'block';
+        })
+        .catch((error) => {
+            console.error("Erro ao enviar código:", error);
+            alert("Erro ao enviar código.");
+        });
+}
+
+window.verifyCode = function() {
+    const code = document.getElementById('verificationCode').value;
+    window.confirmationResult.confirm(code)
+        .then((result) => {
+            result.user.getIdToken().then(firebaseToken => {
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ firebaseToken })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    window.location.href = '/profile.html';
+                })
+                .catch(error => console.error('Erro no login: ', error));
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao verificar código: ', error);
+        });
+     }
+    </script>
+    
+    
+</body>
+</html>

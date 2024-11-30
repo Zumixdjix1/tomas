@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Firebase e js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <title>Registro</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">ERMERODRI</a>
+            <!-- Menu de navegação (removido para simplificar o exemplo) -->
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form id="signup">
+                <label>Login</label>
+                <input type="text" name="login">
+                <label>Password</label>
+                <input type="password" name="password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script type="module">/*
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signOut, setPersistence, inMemoryPersistence } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7kwRCZnZ4ScbztOX29fI2kRJX-8oVa2k",
+            authDomain: "tomas-ebfce.firebaseapp.com",
+            projectId: "tomas-ebfce",
+            storageBucket: "tomas-ebfce.appspot.com",
+            messagingSenderId: "385500274636",
+            appId: "1:385500274636:web:6690ef017b2985ff548769"
+        };
+
+        // Inicialização do Firebase e Autenticação
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        setPersistence(auth, inMemoryPersistence);
+
+        // Manipulador do formulário de cadastro
+        document.getElementById('signup').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const login = document.querySelector('input[name="login"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            try {
+                const { user } = await createUserWithEmailAndPassword(auth, login, password);
+                const idToken = await user.getIdToken();
+
+                const response = await fetch("/sessionLogin", {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json',
+                        "Content-Type": "application/json",
+                        "CSRF-Token": Cookies.get("XSRF-TOKEN")  // Confirme que o token está presente
+                    },
+                    body: JSON.stringify({ idToken })
+                });
+
+                if (response.ok) {
+                    await signOut(auth);
+                    window.location.assign("/perfil");
+                } else {
+                    throw new Error("Não autorizado");
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Ocorreu um erro ao registrar. Verifique os detalhes.");
+            }
+        });*/
+    </script>
+</body>
+</html>
